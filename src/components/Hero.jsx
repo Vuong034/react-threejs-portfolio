@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Suspense } from "react";
 import styled from 'styled-components'
 import Navbar from './Navbar.jsx'
-// import { Canvas } from "@react-three/fiber";
-// import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const Section = styled.div`
   height: 100vh;
@@ -134,21 +134,23 @@ const Hero = () => {
             <Button>Learn More</Button>
           </Left>
           <Right>
-            {/* <Canvas>
+            <Canvas>
               <Suspense fallback={null}>
                 <OrbitControls enableZoom={false} />
                 <ambientLight intensity={1} />
                 <directionalLight position={[3, 2, 1]} />
                 <Sphere args={[1, 100, 200]} scale={2.4}>
                   <MeshDistortMaterial
-                    color="#3d1c56"
+                    color="#016768"
                     attach="material"
                     distort={0.5}
-                    speed={2}
-                  />
+                    speed={1}
+                    opacity={0.75}
+                    transparent={true}
+                                      />
                 </Sphere>
               </Suspense>
-            </Canvas>*/}
+            </Canvas>
             <Img src="./img/ship2.svg" /> 
           </Right>
         </Container>
