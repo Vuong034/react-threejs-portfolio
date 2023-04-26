@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Development from "./Development";
-// import ProductDesign from "./ProductDesign";
+import Integration from "./Integration";
 import WebDesign from "./WebDesign.jsx";
 
 const worksList = [
-  "Design",
+  "Web Design",
   "Development",
   "Integration",
 ];
@@ -88,7 +88,9 @@ const Right = styled.div`
 `;
 
 const Works = () => {
+  
   const [work, setWork] = useState("Web Design");
+
   return (
     <Section>
       <Container>
@@ -102,12 +104,20 @@ const Works = () => {
           </List>
         </Left>
         <Right>
+          {work === "Web Design" ? (
+            <h1>Web Design</h1>
+          ) : work === "Development" ? (
+            <Development />
+          ) : (
+            <h1>None selected</h1>
+          )}
+
           {/* {work === "Web Design" ? (
             <WebDesign />
           ) : work === "Development" ? (
             <Development />
           ) : (
-            <ProductDesign />
+            <Integration />
           )} */}
           {/* {work === "Web Design" ? (
             <WebDesign />

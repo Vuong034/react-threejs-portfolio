@@ -1,0 +1,9 @@
+to combine elements for jsx loading
+gltf to draco gltf
+gltf-pipeline -i scene.gltf -o object.gltf -d
+
+ps elevated access 
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+convert element to jsx
+npx gltfjsx object.gltf --transform
