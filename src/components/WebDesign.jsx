@@ -2,8 +2,8 @@ import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import styled from "styled-components";
-import MacComp from './MacComp'
-//import Ship_bottle from './Ship_bottle'
+//import MacComp from './MacComp'
+import Ship_bottle from './Ship_bottle'
 
 const Desc = styled.div`
   width: 200px;
@@ -26,10 +26,11 @@ const Desc = styled.div`
 const WebDesign = () => {
   return (
     <>
-      <Canvas>
+      <Canvas camera={{ position: [5, 5, -5], fov: 25 }}>
         <Suspense fallback={null}>
           <Stage environment="city" intensity={0.6}>
-            <MacComp />
+            {/* <MacComp /> */}
+            <Ship_bottle position={[-0.1, -0.2, 0]} rotation={[0, Math.PI / 2, 0]} scale={0.2}/>
           </Stage>
           <OrbitControls enableZoom={false} autoRotate />
         </Suspense>
