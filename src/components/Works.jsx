@@ -104,14 +104,6 @@ const Works = () => {
           </List>
         </Left>
         <Right>
-          {/* {work === "Web Design" ? (
-            <h1>Web Design</h1>
-          ) : work === "Development" ? (
-            <Development />
-          ) : (
-            <h1>None selected</h1>
-          )} */}
-
           {work === "Web Design" ? (
             <WebDesign />
           ) : work === "Development" ? (
@@ -119,11 +111,6 @@ const Works = () => {
           ) : (
             <Integration />
           )}
-          {/* {work === "Web Design" ? (
-            <WebDesign />
-          ) : work === "Development" ? (
-            <Development />
-          ) : null} */}
         </Right>
       </Container>
     </Section>
