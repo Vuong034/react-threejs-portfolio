@@ -67,7 +67,6 @@ const Right = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  font-family: Sans Serif;
   @media only screen and (max-width: 768px) {
     align-items: center;
     text-align: center;
