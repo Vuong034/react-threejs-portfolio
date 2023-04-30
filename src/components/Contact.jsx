@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef,useState } from 'react'
 import styled from 'styled-components'
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import Map from "./Map";
 
 const Section = styled.div`
@@ -74,43 +74,42 @@ const Right = styled.div`
 `;
 
 const Contact = () => {
-  // const ref = useRef();
-  // const [success, setSuccess] = useState(null);
+  const ref = useRef();
+  const [success, setSuccess] = useState(null);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   emailjs
-  //     .sendForm(
-  //       "service_id",
-  //       "template_id",
-  //       ref.current,
-  //       "public_key"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //         setSuccess(true);
-  //       },
-  //       (error) => {
-  //         console.log(result.text);
-  //         setSuccess(false);
-  //       }
-  //     );
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_kq8nmv5",
+        "template_igklrmn",
+        ref.current,
+        "AAEZS25Z0mkfIvutu"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true);
+        },
+        (error) => {
+          console.log(result.text);
+          setSuccess(false);
+        }
+      );
+  };
 
     return (
         <Section>
         <Container>
           <Left>
-            {/* <Form ref={ref} onSubmit={handleSubmit}> */}
-            <Form >
+            <Form ref={ref} onSubmit={handleSubmit}>
               <Title>Contact Me</Title>
               <Input placeholder='Name' name='name'></Input>
-              <Input placeholder='Name'name='email'></Input>
+              <Input placeholder='Email'name='email'></Input>
               <TextArea placeholder='Write your message' name='message' rows={10}></TextArea>
               <Button type="submit">Send</Button>
-              {/* {success &&
-                "Your message has been sent. We'll get back to you soon :)"} */}
+              {success &&
+                "Your message has been sent."}
             </Form>
           </Left>
           <Right>
